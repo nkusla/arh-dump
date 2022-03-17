@@ -1,10 +1,10 @@
-# faktorijel broja
+# Faktorijel broja
 
 .section .text
 .global main
 
 main:
-	movl $4, %eax
+	movl $5, %eax # 5! = 120
 	movl $1, %ebx
 	movl $0, %ecx
 

@@ -1,10 +1,10 @@
-# optimalno mnozenje
+# Optimalno mnozenje
+# Proverava koji broj je veci
 
 .section .text
 .global main
 
 main:
-	# priprema
 	movl $5, %eax
 	movl $3, %ebx
 	movl $0, %ecx

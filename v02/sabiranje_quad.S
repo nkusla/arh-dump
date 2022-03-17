@@ -1,4 +1,4 @@
-# Mnozenje 64-bitnih brojeva
+# Mnozenje 64-bitnih brojeva preko sabiranja
 # a = 2b + c/3
 
 .section .data

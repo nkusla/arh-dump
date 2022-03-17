@@ -12,27 +12,15 @@ main:
 	
 petlja:
 	cmpl b, %eax
+	je kraj
 	ja oduzmi
 	
 	subl %eax, b
-	movl %eax, a
-	movl b, %eax
-	cmpl $0, %eax
-	je sacuvaj_2
-	movl a, %eax
 	jmp petlja
 
 oduzmi:
 	subl b, %eax
-	je sacuvaj_1
 	jmp petlja
-	
-sacuvaj_1:
-	movl b, %eax
-	jmp kraj
-sacuvaj_2:
-	movl a, %eax
-	jmp kraj
 	
 kraj:
 	movl $1, %eax

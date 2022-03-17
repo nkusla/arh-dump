@@ -5,7 +5,7 @@
 
 main:
 	movl $5, %eax
-	movl $3, %ebx
+	movl $3, %ebx # 5 * 3 = 5 + 5 + 5 = 15
 	movl $0, %ecx
 petlja:
 	addl %eax, %ecx

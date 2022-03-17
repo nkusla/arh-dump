@@ -1,10 +1,10 @@
-# Suma prvih ne brojeva
+# Suma prvih n prirodnih brojeva
 
 .section .text
 .globl main
 
 main:
-	movl $10, %eax
+	movl $10, %eax # suma prvih 10 prirodnih brojeva = 55
 	movl $0, %ebx
 petlja:
 	addl %eax, %ebx
