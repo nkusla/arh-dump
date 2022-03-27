@@ -10,22 +10,23 @@ main:
 
 fakt:
 	jmp mnozenje
-umanji:
+nastavi:
+	movl %ecx, %ebx
+	movl $0, %ecx
+
 	dec %eax
 	je kraj
 	jmp fakt
-	
-reset:
-	movl %ecx, %ebx
-	jmp umanji
-	
+		
 mnozenje:
 	addl %eax, %ecx
 	dec %ebx
-	je reset
+	je nastavi
 	jmp mnozenje
 
 kraj:
+	movl %ebx, %ecx
+
 	movl $1, %eax
 	movl $0, %ebx
 	int $0x80
