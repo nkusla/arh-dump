@@ -9,8 +9,8 @@ string: .ascii "   tes.=00+&     \0"
 
 main:
 	movl $string, %esi	# indeksni registar
-	movl $string, %eax	# adresni registar za prvi elem od pocetka koji nije ' '
-	movl $string, %ebx	# adresni registar za prvi elem od kraja koji nije ' '
+	movl $string, %eax	# adresni registar za prvi elem od pocetka koji nije \0
+	movl $string, %ebx	# adresni registar za prvi elem od kraja koji nije \0
 	
 dodji_kraj:
 	cmpb $0, (%esi)

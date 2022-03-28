@@ -9,22 +9,21 @@ string: .ascii "rotlgfxtddpeoapqkwa\0"
 
 main:
 	movl $string, %esi # indeksni registar
-	movl $0, %edi # registar za adresu poslednjeg elementa stringa
+	movl $string, %edi # registar za adresu poslednjeg elementa stringa koji nije \0
 
 broj_kraj:
-	cmpl $0, (%esi)
+	cmpl $0, (%edi)
 	je nastavi
-	incl %esi
+	incl %edi
 	jmp broj_kraj
 
 	nastavi:
-	decl %esi
-	movl %esi, %edi	# edi pamti adresu poslednjeg znaka u stringu koji nije \0
+	decl %edi
 
 bubble_sort:
 	movl $string, %esi
 	cmpl $string, %edi
-	je kraj
+	jbe kraj
 
 	jmp petlja
 	petlja_nastavi:

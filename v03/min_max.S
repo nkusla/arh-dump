@@ -1,4 +1,5 @@
 # Trazenje minimalnog i maksimalnog elementa niza
+# Radi za neoznacene brojeve
 
 .section .data
 NELEM = 7
