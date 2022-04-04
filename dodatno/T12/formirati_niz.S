@@ -1,3 +1,13 @@
+# Dati su nizovi 64-bitnih označenih brojeva A i B sa jednakim brojem elemenata.
+# Formirati niz C na sledeći način:
+# 	1) ako je A[i]>B[i], onda je C[i]=A[i]-B[i]
+# 	2) u suprotnom je C[i]=A[i]+B[i]
+# 
+# U slučaju prekoračenja opsega prilikom računanja, postaviti 32-bitnu promenljivu
+# greska na 1 i prekinuti izvršavanje programa. Ako se program uspešno izvršio,
+# promenljivu greska postaviti na 0. Promenljivu greska vratiti kao izlazni kod
+# programa.
+
 .section .data
 SIZE = 7
 a:	.quad 0x5, 0x000000012A05F200, 0x0000000000010101, 0x0000000000000AAA, 0x0123, 0x7FFFFFFFFFFFFFFF, 0x0000000000000001
@@ -10,6 +20,7 @@ greska: .long 0
 
 main:
 	movl $0, %esi
+	
 petlja:
 	cmpl $SIZE, %esi
 	je kraj
@@ -46,6 +57,7 @@ saberi:
 
 	jo prekoracenje
 	jmp dalje
+
 oduzmi:
 	movl a(,%esi,8), %eax
 	movl b(,%esi,8), %ebx

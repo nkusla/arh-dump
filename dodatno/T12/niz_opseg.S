@@ -1,3 +1,8 @@
+# Dat je niz niz2, koji je niz označenih 64-bitnih brojeva (dvostruka preciznost). Naći
+# koliko se elemenata niza nalazi van opsega [-5000000000 (minus 5 milijardi),
+# 6000000000 (6 milijardi)]. Dobijen broj postaviti u 8-bitnu promenljivu van_opsega i
+# vratiti ga kao izlazni kod programa.
+
 .section .data
 SIZE = 7
 niz2: .quad 0xFFFFFFFED5FA0A00, 0x000000010F882D30, 0x45, 0x0A00000165A0BC00, 0x01, 0x69, 0x0FFFFFFFFFFFFFFF
