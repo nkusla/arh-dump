@@ -7,10 +7,10 @@ SetParity:
 	pushl %ebx
 
 	# Brisanje vrednosti registara
-	xorl %eax, %eax
-	xorl %ebx, %ebx
-	xorl %edx, %edx
-	xorl %ecx, %ecx
+	xorl %eax, %eax	# koristi se kao brojac jedinica u broju
+	xorl %ebx, %ebx	# koristi za masku
+	xorl %edx, %edx # koristi kao pokazivac na element
+	xorl %ecx, %ecx	# koristi kao brojac za petlju
 
 	movl 8(%ebp), %edx		# prebacivanje adrese broja u edx
 	andw $0x7fff, (%edx)	# postavljanje najznacajnijeg bita na 0
@@ -27,12 +27,12 @@ petlja:
 	testl (%edx), %ebx
 	jz petlja
 	incl %eax
-
+ 
 	jmp petlja 	
 	
 promeni_paritet:
 	andl $1, %eax		# sve osim poslednjeg bita (bita pariteta) obrisemo 
-	rorl $17, %eax		# stavljanje poslednjeg bita na 16 mesto
+	roll $15, %eax		# stavljanje poslednjeg bita na 16 mesto
 	orl %eax, (%edx)	# postavljanje najznacajnige bita
 	
 obrisi_stek:
