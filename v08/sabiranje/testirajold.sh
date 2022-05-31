@@ -53,11 +53,11 @@ EOL
 )
 
 TEST02=$(cat <<EOL
-17
+37
 EOL
 )
 OUTP02=$(cat <<EOL
-Unesite bazu broja:17
+Unesite bazu broja:37
 Greska: prekoracenje!
 EOL
 )
@@ -112,7 +112,6 @@ Unesite bazu broja:16
 Unesite broj:FFFFffff
 Unesite bazu broja:2
 Unesite broj:1
-Unesite bazu rezultata:2
 Greska: prekoracenje!
 EOL
 )
@@ -144,7 +143,7 @@ if [ "$1" != "" ] && [ -f "$1" ]; then
     if [ -f glavni.c ]; then
         GLAVNI=glavni.c
     fi
-    gcc -g -m32 -o zad $GLAVNI $1 1>$OUT1 2>&1
+    gcc -g -m32 -o zad $GLAVNI $1 $2 $3 1>$OUT1 2>&1
     if [ $? -ne 0 ]; then
         echoq -e "\e[01;31m\n\nGreška u kompajliranju!\e[00m\n"
         if [ $QUIET -eq 0 ]; then

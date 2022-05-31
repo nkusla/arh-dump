@@ -32,9 +32,11 @@ petlja:
 	cmpb $'7, (%esi)
 	ja greska_znak
 	
+	# Algoritam konverzije
 	movb (%esi), %bl
 	subl $'0', %ebx
 	mull %ecx
+	
 	cmpl $0, %edx		# provera prekoracenja mnozenjem
 	jne greska_prekoracenje
 	addl %ebx, %eax		# provera prekoracenja sabiranjem
